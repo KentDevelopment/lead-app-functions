@@ -3,12 +3,14 @@
   "description": "Cloud Functions for Firebase",
   "scripts": {
     "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
     "serve": "firebase serve --only functions",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "update": "yarn upgrade-interactive --latest"
+    "update": "yarn upgrade-interactive --latest",
+    "prettier": "prettier --write \"index.js\""
   },
   "dependencies": {
     "firebase-admin": "~5.12.1",
