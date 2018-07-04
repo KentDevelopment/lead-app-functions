@@ -16,8 +16,10 @@
     "nodemailer": "^4.6.7"
   },
   "devDependencies": {
-    "eslint": "^5.0.0",
-    "eslint-plugin-promise": "^3.8.0"
+    "eslint": "^5.0.1",
+    "eslint-plugin-prettier": "^2.6.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "prettier": "^1.13.7"
   },
   "private": true
 }
