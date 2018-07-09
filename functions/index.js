@@ -18,24 +18,17 @@ const mailTransport = nodemailer.createTransport({
 });
 
 exports.firestoreEmail = functions.firestore
-  .document("users/{campus}")
-  .onUpdate(change => {
-    // Retrieve the current and previous value
-    const data = change.after.data();
-    // console.log('AFTER DATA', data)
-    const previousData = change.before.data();
-    // console.log('EVENT', change)
-    const userId = previousData.uid;
-    // console.log('USERID', userId)
+  .document("users/{uid}")
+  .onCreate(event => {
+    const userId = event._fieldsProto.uid.stringValue;
     const db = admin.firestore();
     return db
       .collection("users")
       .doc(userId)
       .get()
       .then(doc => {
-        // console.log('DOC', doc)
         const user = doc.data();
-        // console.log('USER', user)
+        console.log("USER", user);
         const mailOptions = {
           subject: `New user added to ${user.campus} LEAD App ${user.email}`,
           from: '"Lead App" <development@student.kent.edu.au>',
@@ -45,7 +38,7 @@ exports.firestoreEmail = functions.firestore
 
         // Building Email message.
         mailOptions.html = `
-					<h2>You have a new registered user on the LEADERBOARD App, please update their LEAD points as soon as possible!</h2>
+					<h1>You have a new registered user on the LEADERBOARD App, please update their LEAD points as soon as possible!</h1>
 					<p><b>Email Address: </b>${user.email}</p>
 					<p><b>Name: </b>${user.displayName}</p>
 					<p><b>Campus: </b>${user.campus}</p>
