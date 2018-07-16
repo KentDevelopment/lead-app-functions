@@ -1,5 +1,4 @@
-// Create and Deploy Your First Cloud Functions
-// https://firebase.google.com/docs/functions/write-firebase-functions
+// Send Emails upon user registration
 
 const functions = require("firebase-functions");
 const nodemailer = require("nodemailer");
@@ -28,7 +27,6 @@ exports.firestoreEmail = functions.firestore
       .get()
       .then(doc => {
         const user = doc.data();
-        console.log("USER", user);
         const mailOptions = {
           subject: `New user added to ${user.campus} LEAD App ${user.email}`,
           from: '"Lead App" <development@student.kent.edu.au>',
