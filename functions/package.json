@@ -22,5 +22,6 @@
     "eslint-plugin-promise": "^4.0.1",
     "prettier": "^1.14.3"
   },
-  "private": true
+  "private": true,
+  "version": "1.0.0"
 }
