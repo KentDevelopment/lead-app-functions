@@ -1,28 +1,40 @@
 {
   "name": "lead-app-email-function",
+  "version": "1.0.0",
   "description": "User Registration Email",
+  "homepage": "https://lead.kent.edu.au/",
+  "bugs": {
+    "url": "https://github.com/KentDevelopment/lead-app-functions/issues",
+    "email": "renan.sigolo@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "author": "Renan Sigolo <renan.sigolo@gmail.com>",
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KentDevelopment/lead-app-functions.git"
+  },
   "scripts": {
+    "deploy:dev": "yarn lint --fix && firebase deploy -P development --only functions",
+    "deploy:prod": "yarn lint --fix && firebase deploy  -P production --only functions",
     "lint": "eslint .",
+    "logs": "firebase functions:log",
+    "prettier": "prettier --config ./.prettierrc.json --write index.js",
     "serve": "firebase serve --only functions",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
-    "deploy": "yarn lint --fix && firebase deploy --only functions",
-    "logs": "firebase functions:log",
-    "update": "yarn upgrade-interactive --latest",
-    "prettier": "prettier --write \"index.js\""
+    "update": "yarn upgrade-interactive --latest"
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "firebase-admin": "~6.1.0",
+    "firebase-admin": "~6.4.0",
     "firebase-functions": "^2.1.0",
     "nodemailer": "^4.6.8"
   },
   "devDependencies": {
-    "eslint": "^5.9.0",
-    "eslint-plugin-prettier": "^3.0.0",
+    "eslint": "^5.11.1",
+    "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-promise": "^4.0.1",
-    "prettier": "^1.15.2"
-  },
-  "private": true,
-  "version": "1.0.0"
+    "prettier": "^1.15.3"
+  }
 }

@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "lead-app-514e3"
+    "default": "kent-ac75b",
+    "development": "kent-ac75b",
+    "production": "lead-app-514e3"
   }
 }

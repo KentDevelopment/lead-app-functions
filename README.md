@@ -24,12 +24,12 @@ To deploy firebase functions to productions run `yarn deploy`
 
 This project is licensed under the APACHE 2.0 License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-
-* Thanks to everyone at Kent Institute
-* Inspiring the world to be more collaborative
-
 ## Reference
 
 * [Firebase Function Example](https://github.com/firebase/functions-samples/blob/master/email-confirmation/README.md)
 * [Firebase CLI Documentation](https://firebase.google.com/docs/cli/)
+
+## Acknowledgments
+
+* Thanks to everyone at Kent Institute
+* Inspiring the world to be more collaborative
