@@ -1,10 +1,14 @@
-# Kent LEAD Points &middot; Functions
+# LEAD Points Functions - Kent Institute
 
 The LEAD Points app has been develop to foment the student engagement with Kent's events, workshops and social activities.
 
-## Deploying to production
+## Deploying 
 
-To deploy firebase functions to productions run `yarn deploy`
+To deploy firebase functions use:
+
+* to development run `npm run deploy:dev`
+
+* to production run `npm run deploy:prod`
 
 ## Built With
 
@@ -14,7 +18,6 @@ To deploy firebase functions to productions run `yarn deploy`
 ## Dev tools
 
 * [Eslint](https://eslint.org/) - The pluggable linting utility for JavaScript and JSX.
-* [Yarn](https://yarnpkg.com/en/) - Fast, reliable, and secure dependency management.
 
 ## Authors
 

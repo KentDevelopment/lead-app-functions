@@ -15,26 +15,25 @@
     "url": "https://github.com/KentDevelopment/lead-app-functions.git"
   },
   "scripts": {
-    "deploy:dev": "yarn lint --fix && firebase deploy -P development --only functions",
-    "deploy:prod": "yarn lint --fix && firebase deploy  -P production --only functions",
+    "deploy:dev": "npm run lint --fix && firebase deploy -P development --only functions",
+    "deploy:prod": "npm run lint --fix && firebase deploy  -P production --only functions",
     "lint": "eslint .",
     "logs": "firebase functions:log",
     "prettier": "prettier --config ./.prettierrc.json --write index.js",
     "serve": "firebase serve --only functions",
     "shell": "firebase functions:shell",
-    "start": "npm run shell",
-    "update": "yarn upgrade-interactive --latest"
+    "start": "npm run shell"
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "firebase-admin": "~6.4.0",
+    "firebase-admin": "^6.5.1",
     "firebase-functions": "^2.1.0",
-    "nodemailer": "^4.6.8"
+    "nodemailer": "^5.1.1"
   },
   "devDependencies": {
-    "eslint": "^5.11.1",
+    "eslint": "^5.12.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-promise": "^4.0.1",
-    "prettier": "^1.15.3"
+    "prettier": "^1.16.1"
   }
 }
