@@ -15,8 +15,8 @@ const mailTransport = nodemailer.createTransport({
   secure: true,
   auth: {
     user: gmailEmail,
-    pass: gmailPassword
-  }
+    pass: gmailPassword,
+  },
 })
 
 exports.sendEmail = functions.https.onRequest((req, res) => {
@@ -26,19 +26,19 @@ exports.sendEmail = functions.https.onRequest((req, res) => {
       .collection('users')
       .doc(req.body.uid)
       .get()
-      .then(doc => {
+      .then((doc) => {
         const user = doc.data()
         const formData = {
           email: user.email,
           displayName: user.displayName,
-          campus: user.campus
+          campus: user.campus,
         }
 
         const mailOptions = {
           subject: `New user added to ${user.campus} LEAD App ${user.email}`,
           from: '"Lead App" <development@student.kent.edu.au>',
           to: 'lead@kent.edu.au',
-          bcc: 'renan.sigolo@gmail.com'
+          bcc: 'renan.sigolo@gmail.com',
         }
 
         // Build Email message.
@@ -57,7 +57,7 @@ exports.sendEmail = functions.https.onRequest((req, res) => {
           .then(() => {
             return res.status(200).end()
           })
-          .catch(error => {
+          .catch((error) => {
             return res.status(500)
           })
       })
