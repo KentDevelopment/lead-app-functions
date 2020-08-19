@@ -3,3 +3,4 @@
 functions/node_modules
 functions/yarn-error.log
 .DS_Store
+.runtimeconfig.json
