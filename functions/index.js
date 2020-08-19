@@ -52,14 +52,10 @@ exports.sendEmail = functions.https.onRequest((req, res) => {
       Name: ${formData.displayName}
       Campus: ${formData.campus}`
 
-        return mailTransport
-          .sendMail(mailOptions)
-          .then(() => {
-            return res.status(200).end()
-          })
-          .catch((error) => {
-            return res.status(500)
-          })
+        // Returning result
+        return mailTransport.sendMail(mailOptions, (error) => {
+          return error ? res.status(500).end() : res.status(200).end()
+        })
       })
   })
 })
